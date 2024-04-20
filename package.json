@@ -1,18 +1,24 @@
 {
   "name": "hedera",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "db:generate": "drizzle-kit generate:pg --schema ./src/db/schema.ts --out=./src/db/migrations",
+    "db:migrate": "npm run ./src/db/migrate.ts",
+    "db:seed": "npm run ./src/db/seed.ts",
     "lint": "next lint"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.9.1",
     "@radix-ui/react-dialog": "^1.0.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.0",
+    "drizzle-orm": "^0.30.8",
     "lucide-react": "^0.309.0",
     "next": "14.0.4",
     "react": "^18",
@@ -25,6 +31,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "drizzle-kit": "^0.20.17",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
