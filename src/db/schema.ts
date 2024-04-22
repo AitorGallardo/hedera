@@ -7,3 +7,14 @@ export const users = pgTable("users", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
+
+// Posible table for bookmarks
+
+// CREATE TABLE bookmarks (
+//   id SERIAL PRIMARY KEY,
+//   url TEXT NOT NULL,
+//   title TEXT,
+//   description TEXT,
+//   add_date TIMESTAMP,
+//   icon TEXT
+// );

@@ -14,7 +14,7 @@ export default function UploadButton() {
     reader.onload = function(e: ProgressEvent<FileReader>) {
       if (e.target?.result) {
         setFileContent(e.target?.result);
-        console.log(e.target?.result);
+        console.dir(e.target?.result, { depth: null });
       }
     };
 
@@ -24,7 +24,7 @@ export default function UploadButton() {
   return (
     <div>
       <input type="file" accept=".html" onChange={handleFileUpload} />
-      <div dangerouslySetInnerHTML={{ __html: fileContent }} className='bg-white w-1/2 [&_a:hover]:underline'></div>
+      <div id='parent_bookmark_container' dangerouslySetInnerHTML={{ __html: fileContent }} className='bg-white w-1/2 [&_a:hover]:underline'></div>
     </div>
   );
 }
