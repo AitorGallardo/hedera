@@ -6,8 +6,6 @@ import { migrate } from "drizzle-orm/neon-http/migrator";
 import { neon } from "@neondatabase/serverless";
 
 
-console.log('hola',process.env.DATABASE_URL);
-
 const sql = neon(process.env.DATABASE_URL || '')
 
 const db = drizzle(sql)
